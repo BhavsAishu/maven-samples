@@ -10,8 +10,23 @@ pipeline {
                  script{
                  
                  git branch: 'master', url: 'https://github.com/BhavsAishu/maven-samples.git'
-                 }
+                
+                }
            }
+        }
+
+        stage("UNIT TESTING"){
+        
+           steps {
+           
+             scripts {
+                 
+                sh 'mvn test'
+             }
+           
+           }
+        
+        
         }
   
   
