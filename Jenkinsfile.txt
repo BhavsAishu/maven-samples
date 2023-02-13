@@ -1,5 +1,6 @@
 pipeline {
   agent any 
+  label 'maven'
 
      stages{
   
@@ -15,13 +16,13 @@ pipeline {
            }
         }
 
-        stage("UNIT TESTING"){
+        stage("unit test"){
         
-           steps {
-           
-             script{
+           steps{
+           container ('maven')
+             {
                  
-                sh 'mvn test'
+                sh 'mvn clean test'
              }
            
            }
