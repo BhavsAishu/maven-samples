@@ -5,11 +5,11 @@ pipeline {
   
         stage("Git Checkout"){
          
-           steps {
+           steps{
                  
-                 script {
+                 script{
                  
-                 git branch: 'master' url: 'https://github.com/BhavsAishu/maven-samples.git'
+                 git branch: 'master', url: 'https://github.com/BhavsAishu/maven-samples.git'
                  }
            }
         }
